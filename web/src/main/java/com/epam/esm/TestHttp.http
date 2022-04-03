@@ -1,0 +1,177 @@
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "userName": "user",
+  "password": "user"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/reg
+Content-Type: application/json
+
+{
+  "userName": "user",
+  "password": "user",
+  "isActive": true
+}
+
+###
+
+
+GET http://localhost:8080/api/v1/gift-certificates/100
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/v1/gift-certificates?size=2&page=1&sort=lastUpdateDate
+Content-Type: application/json
+
+###
+
+
+GET http://localhost:8080/api/v1/gift-certificates/find-by-name?size=2&page=1&name=ph&sort=lastUpdateDate
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:8080/api/v1/gift-certificates/find-by-description?size=2&page=1&description=wat&sort=name
+Content-Type: application/json
+
+
+###
+
+
+GET http://localhost:8080/api/v1/gift-certificates/get-cert-by-tags?name=car&size=2&page=1&sort=name
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:8080/api/v1/gift-certificates
+Content-Type: application/json
+
+{
+  "name": "TestSave0033",
+  "description": "someDescription",
+  "price": 100.0,
+  "duration": 22,
+  "tags": [
+    {
+      "name": "tagtwo"
+    },
+    {
+      "name": "tagone"
+    }
+  ]
+}
+
+
+###
+
+DELETE http://localhost:8080/api/v1/gift-certificates/11993
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:8080/api/v1/gift-certificates
+Content-Type: application/json
+
+{
+  "id": 11993,
+  "description": "someDescription2222",
+  "price": 9119.0,
+  "duration": 91,
+  "tags": [
+    {
+
+      "name": "tagthree"
+    }
+  ]
+}
+
+
+###
+
+PATCH http://localhost:8080/api/v1/gift-certificates/update-price?id=100&price=26
+Content-Type: application/json
+
+###TAG
+
+GET http://localhost:8080/api/v1/tags/120
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:8080/api/v1/tags/find-by-name?size=2&page=1&name=e&sort=name
+Content-Type: application/json
+
+###
+
+
+GET http://localhost:8080/api/v1/tags?size=2&page=1&sort=name
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/v1/tags/find-most-popular-end-expensive-tag-by-user-id?userId=50
+Content-Type: application/json
+
+###
+
+
+DELETE http://localhost:8080/api/v1/tags/1212
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/v1/tags
+Content-Type: application/json
+
+{
+  "name": "testAdd234"
+}
+
+
+###
+
+###USER###################
+
+GET http://localhost:8080/api/v1/users/100
+Content-Type: application/json
+
+###
+GET http://localhost:8080/api/v1/users?size=2&page=1&sort=userName
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/api/v1/users/get-by-name?size=2&page=1&name=us&sort=registrationDate
+Content-Type: application/json
+
+
+#####ORDER########
+
+GET http://localhost:8080/api/v1/orders/100
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/v1/orders?size=2&page=1&sort=orderDate
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/api/v1/orders/get-orders-from-user?size=2&page=1&userId=274&sort=orderDate
+Content-Type: application/json
+
+
+####
+
+GET http://localhost:8080/api/v1/orders/buy-certificate?certId=900&userId=999
+Content-Type: application/json
+
+####
